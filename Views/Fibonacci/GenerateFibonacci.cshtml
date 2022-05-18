@@ -1,0 +1,47 @@
+﻿@model Fibonacci.Models.FibonacciOperationsModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Your Result</h2>
+<hr />
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+
+        <div class="col-md-5">
+            @Html.LabelFor(modelItem => Model.SumOfEvens)
+        </div>
+
+        <div class="col-md-5">
+            @Html.DisplayFor(modelItem => Model.SumOfEvens)
+           
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-md-5">
+            @Html.LabelFor(modelItem => Model.FibonacciSeries)
+        </div>
+
+        <div class="col-md-5">
+
+            @Html.ValidationMessageFor(modelItem => Model.FibonacciSeries, "", new { @class = "text-danger" })
+
+        </div>
+
+            <div class="col-md-5">
+
+                @foreach (var item in Model.FibonacciSeries)
+                {
+                    <span>@item,</span>
+                }
+
+            </div>
+
+        </div>
+    </div>
