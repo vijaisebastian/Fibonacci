@@ -1,4 +1,4 @@
-﻿@model Fibonacci.Models.FibonacciOperationsModel
+﻿@model Fibonacci.Model.FibonacciOperationsViewModel
 
 @{
     ViewBag.Title = "Result";
@@ -17,7 +17,6 @@
 
         <div class="col-md-5">
             @Html.DisplayFor(modelItem => Model.SumOfEvens)
-           
         </div>
 
     </div>
@@ -29,16 +28,17 @@
         </div>
 
         <div class="col-md-5">
-
             @Html.ValidationMessageFor(modelItem => Model.FibonacciSeries, "", new { @class = "text-danger" })
-
         </div>
 
             <div class="col-md-5">
 
-                @foreach (var item in Model.FibonacciSeries)
+                @if (Model.FibonacciSeries != null)
                 {
-                    <span>@item,</span>
+                    foreach (var item in Model.FibonacciSeries)
+                    {
+                        <span>@item,</span>
+                    }
                 }
 
             </div>

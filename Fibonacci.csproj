@@ -131,11 +131,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FibonacciController.cs" />
-    <Compile Include="FibonacciUnitTests.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\FibonacciModel.cs" />
+    <Compile Include="Model\FibonacciOperationsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +188,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fibonacci.BLayer\Fibonacci.BLayer.csproj">
+      <Project>{8c46c676-80b4-4852-9453-0b2ff4d4ee0c}</Project>
+      <Name>Fibonacci.BLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fibonacci.Model\Fibonacci.Model.csproj">
+      <Project>{8f282b99-1f64-4e44-8e7e-c4a121004490}</Project>
+      <Name>Fibonacci.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
